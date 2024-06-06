@@ -22,3 +22,11 @@ int main() {
     }
 return 0;
 }
+output:
+Key 25 inserted at index 5
+Key 37 inserted at index 7
+Key 18 inserted at index 8
+Key 55 inserted at index 6
+Key 22 inserted at index 2
+Key 35 inserted at index 9
+Key 50 inserted at index 0
