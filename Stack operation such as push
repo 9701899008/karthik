@@ -16,3 +16,7 @@ int main() {
     push(30);
     return 0;
 }
+output:
+10 pushed to stack
+20 pushed to stack
+30 pushed to stack
