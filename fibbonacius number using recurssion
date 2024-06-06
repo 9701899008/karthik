@@ -11,3 +11,6 @@ int main() {
     printf("Fibonacci number at position %d is %d\n", n, fibonacci(n));
     return 0;
 }
+
+output:
+Fibonacci number at position 10 is 55
