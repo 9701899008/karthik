@@ -36,3 +36,7 @@ int main() {
     printf("Dequeued element: %d\n", dequeue());
     return 0;
 }
+output:
+Dequeued element: 10
+Dequeued element: 20
+Dequeued element: 30
