@@ -1,0 +1,12 @@
+#include <stdio.h>
+#include <stdbool.h>
+#define MAX_VERTICES 100
+bool visited[MAX_VERTICES];
+int graph[MAX_VERTICES][MAX_VERTICES];
+void bfs(int start, int depth) {
+}
+int main() {
+    return 0;
+}
+
+output:
