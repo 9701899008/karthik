@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <stdlib.h>
+typedef struct Node {
+    int key;
+    struct Node *left;
+    struct Node *right;
+    int height;
+} Node;
+Node* newNode(int key) {
+    Node* node = (Node*)malloc(sizeof(Node));
+    node->key = key;
+    node->left = NULL;
+    node->right = NULL;
+    node->height = 1;
+    return node;
+}
+int getHeight(Node* node) {
+    if (node == NULL)
+        return 0;
+    return node->height;
+}
+int getBalance(Node* node) {
+    if (node == NULL)
+        return 0;
+    return getHeight(node->left) - getHeight(node->right);
+}
+Node* rightRotate(Node* y) {
+    Node* x = y->left;
+    Node* T = x->right;
+    x->right = y;
+    y->left = T;
+    y->height = max(getHeight(y->left), getHeight(y->right)) + 1;
+    x->height = max(getHeight(x->left), getHeight(x->right)) + 1;
+    return x;
+}
+int main() {
+    Node* root = NULL;
+    return 0;
+}
