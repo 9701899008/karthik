@@ -24,3 +24,6 @@ printf("Popped element: %d\n", pop());
 printf("Popped element: %d\n", pop());
 return 0;
 }
+output:
+Popped element: 30
+Popped element: 20
