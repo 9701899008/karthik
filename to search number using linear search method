@@ -20,6 +20,6 @@ int main() {
     } else {
         printf("Element not found in the array");
     }
-    
+   
     return 0;
 }
