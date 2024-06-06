@@ -31,3 +31,7 @@ int main() {
 
     return 0;
 }
+output:
+Resultant Matrix:
+1 2 
+3 4
