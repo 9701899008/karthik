@@ -3,10 +3,36 @@
 #define MAX_VERTICES 100
 bool visited[MAX_VERTICES];
 int graph[MAX_VERTICES][MAX_VERTICES];
-void bfs(int start, int depth) {
+int queue[MAX_VERTICES];
+int front = 0, rear = -1;
+void bfs(int start, int target) {
+    for (int i = 0; i < MAX_VERTICES; i++) {
+        visited[i] = false;
+    }
+    queue[++rear] = start;
+    visited[start] = true;
+    while (front <= rear) {
+        int current = queue[front++];
+        if (current == target) {
+            printf("Target vertex found!");
+            return;
+        }
+        for (int i = 0; i < MAX_VERTICES; i++) {
+            if (graph[current][i] && !visited[i]) {
+                queue[++rear] = i;
+visited[i] = true;
+}
+ }
+ }
+    printf("Target vertex not reachable!");
 }
 int main() {
+    int start = 5;
+    int target = 3;
+    bfs(start, target);
     return 0;
 }
 
-output:
+
+
+output:Target vertex not reachable!
