@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Node {
+    int data;
+    struct Node* next;
+};
+
+void insertNode(struct Node** head, int position, int data) {
+    // Insert node at position
+}
+
+void deleteNode(struct Node** head, int key) {
+    // Delete node with key
+}
+
+void combinedOperation(struct Node** head, int position, int data, int key) {
+    insertNode(head, position, data);
+    deleteNode(head, key);
+}
+
+int main() {
+    struct Node* head = NULL;
+    
+    // Perform combined operation
+    combinedOperation(&head, 2, 10, 5);
+
+    return 0;
+}
