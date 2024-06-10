@@ -1,0 +1,30 @@
+#include <stdio.h>
+#define INF 9999
+#define V 4
+int graph[V][V] = {
+{0, 10, 15, 20},
+{10, 0, 35, 25},
+{15, 35, 0, 30},
+{20, 25, 30, 0}
+};
+int visited_all = (1 << V)-1;
+int tsp(int mask, int pos){
+if (mask == visited_all)
+return graph[pos][0];
+int min_cost = INF;
+for (int city=0;city<V;city++){
+if ((mask &(1<<city))==0){
+int new_cost =graph[pos][city]+tsp(mask|(1 << city),city);
+min_cost = (new_cost < min_cost) ? new_cost : min_cost;
+}
+}
+return min_cost;
+}
+int main() {
+int start = 0;
+printf("Minimum cost for the Traveling Salesman Problem: %d\n", tsp(1, start));
+return 0;
+}
+
+output:
+Minimum cost for the Traveling Salesman Problem: 80
