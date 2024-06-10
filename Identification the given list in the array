@@ -1,0 +1,23 @@
+#include <stdio.h>
+int main() {
+int array[] = {1, 2, 3, 4, 5};
+int list[] = {3, 4};
+int arraySize = sizeof(array) / sizeof(array[0]);
+int listSize = sizeof(list) / sizeof(list[0]);
+for (int i = 0; i <= arraySize - listSize; i++) {
+int j;
+for (j = 0; j < listSize; j++){
+if (array[i + j] != list[j]){
+break;
+}
+}
+if (j == listSize) {
+printf("List found starting at index %d in the array.\n", i);
+break;
+}
+}
+return 0;
+}
+
+output:
+List found starting at index 2 in the array.
