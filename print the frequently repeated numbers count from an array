@@ -1,0 +1,23 @@
+#include<stdio.h>
+#define SIZE 10
+int main(){
+int arr[SIZE]={1, 2, 2, 3, 3, 3, 4, 4, 4, 4};
+int freq[SIZE]={0};
+for(int i=0;i<SIZE;i++){
+freq[arr[i]]++;
+}
+printf("Frequently Repeated Numbers:\n");
+for(int i=0;i<SIZE;i++){
+if(freq[i]>1){
+printf("%d appears %d times\n",i,freq[i]);
+}
+}
+return 0;
+}
+
+output:
+Frequently Repeated Numbers:
+2 appears 2 times
+3 appears 3 times
+4 appears 4 times
+
