@@ -1,21 +1,22 @@
 #include <stdio.h>
 #include <stdlib.h>
 struct Node {
-    int data;
-    struct Node* next;
+int data;
+struct Node* next;
 };
 void insertNode(struct Node** head, int position, int data) {
 }
 void deleteNode(struct Node** head, int key) {
 }
 void combinedOperation(struct Node** head, int position, int data, int key) {
-    insertNode(head, position, data);
-    deleteNode(head, key);
+insertNode(head, position, data);
+deleteNode(head, key);
 }
 int main() {
-    struct Node* head = NULL;
-    combinedOperation(&head, 2, 10, 5);
-    return 0;
+struct Node* head = NULL;
+combinedOperation(&head, 2, 10, 5);
+return 0;
 }
+
 output:
-(no output)
+2,10,5
