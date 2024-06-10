@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct Node{
+int data;
+struct Node* next;
+};
+void intersectSLL(struct Node* head1, struct Node* head2){
+struct Node* ptr1=head1;
+struct Node* ptr2=head2;
+while(ptr1!=ptr2){
+ptr1=(ptr1==NULL)? head2:ptr1->next;
+ptr2=(ptr2==NULL)? head1:ptr2->next;
+}
+if(ptr1 == NULL){
+printf("No intersection point found.\n");
+} else{
+printf("Intersection point found at node with data: %d\n", ptr1->data);
+}
+}
+
+output:
+Intersection point found at node with data: 15
+
