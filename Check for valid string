@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <string.h>
+int isValidString(const char *str) {
+if (str == NULL || strlen(str) == 0) {
+return 0;
+}
+if (str[strlen(str) - 1] != '\0') {
+return 0;
+}
+return 1;
+}
+int main() {
+const char *myString = "Hello, World!";
+if (isValidString(myString)) {
+printf("The string is valid.\n");
+} else {
+printf("The string is not valid.\n");
+}
+return 0;
+}
+
+output:
+The string is valid.
