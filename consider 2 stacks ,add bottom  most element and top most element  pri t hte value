@@ -1,0 +1,45 @@
+#include <stdio.h>
+#define MAX 100
+int stack1[MAX], stack2[MAX];
+int top1 = -1, top2 = -1;
+void pushBottom(int stack[], int *top, int item) {
+if (*top == MAX - 1) {
+printf("Stack Overflow\n");
+return;
+}
+stack[++(*top)] = item;
+}
+void pushTop(int stack[], int *top, int item) {
+if(*top==MAX-1){
+printf("Stack Overflow\n");
+return;
+}
+for (int i = *top; i >= 0; i--) {
+stack[i + 1]=stack[i];
+}
+stack[0]=item;
+(*top)++;
+}
+void printStack(int stack[], int top) {
+for (int i = 0; i <= top; i++) {
+printf("%d ", stack[i]);
+}
+printf("\n");
+}
+int main() {
+pushBottom(stack1, &top1, 10);
+pushTop(stack1, &top1, 20);
+pushBottom(stack2, &top2, 30);
+pushTop(stack2, &top2, 40);
+printf("Stack 1: ");
+printStack(stack1, top1);
+printf("Stack 2: ");
+printStack(stack2, top2);
+return 0;
+}
+
+output:
+Stack 1: 20 10 
+Stack 2: 40 30 
+
+
