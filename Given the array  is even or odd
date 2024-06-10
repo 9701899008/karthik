@@ -1,0 +1,14 @@
+#include<stdio.h>
+int main(){
+int arr[]={2, 4, 6, 8, 10};
+int size=sizeof(arr)/sizeof(arr[0]);
+if(arr[size-1]%2==0){
+printf("The array is even.\n");
+}else{
+printf("The array is odd.\n");
+}
+return 0;
+}
+
+output:enter the number :3
+it is odd
