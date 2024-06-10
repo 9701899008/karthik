@@ -1,0 +1,44 @@
+#include<stdio.h>
+#include<stdlib.h>
+#define SIZE 5
+int stack1[SIZE];
+int top1=-1;
+int stack2[SIZE];
+int top2=-1;
+void enqueue(int value) {
+if(top1==SIZE-1){
+printf("Queue is full.\n");
+}else{
+stack1[++top1] = value;
+}
+}
+int dequeue() {
+if(top1==-1&&top2==-1){
+printf("Queue is empty.\n");
+return -1;
+}
+if(top2==-1){
+while(top1!=-1){
+stack2[++top2]=stack1[top1--];
+}
+}
+int value=stack2[top2--];
+return value;
+}
+int main() {
+enqueue(1);
+enqueue(2);
+enqueue(3);
+printf("%d\n", dequeue());
+printf("%d\n", dequeue());
+printf("%d\n", dequeue());
+printf("%d\n", dequeue());
+return 0;
+}
+
+output:
+1
+2
+3
+Queue is empty.
+
