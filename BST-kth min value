@@ -1,0 +1,41 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct Node{
+int data;
+struct Node *left, *right;
+};
+void kthMinimumUtil(struct Node*root, int k, int*count, int*result){
+if(root==NULL||*count>= k){
+return;
+}
+ kthMinimumUtil(root->left, k, count, result);
+(*count)++;
+if(*count == k){
+*result = root->data;
+return;
+}
+kthMinimumUtil(root->right, k, count, result);
+}
+int kthMinimum(struct Node* root, int k) {
+int count=0;
+int result=-1;
+kthMinimumUtil(root, k, &count, &result);
+return result;
+}
+int main(){
+struct Node* root = NULL; 
+int k = 3;
+int kthMin = kthMinimum(root, k);
+printf("The %d-th minimum value in the BST is: %d\n", k, kthMin);
+return 0;
+}
+
+output:
+        20
+       /  \
+      8    22
+     / \
+    4  12
+      /  \
+     10   14
+
