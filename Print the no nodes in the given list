@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct Node{
+int data;
+struct Node* next;
+};
+int countNodes(structNode*head) {
+int count=0;
+struct Node*current=head;
+while(current!=NULL){
+count++;
+current=current->next;
+}
+return count;
+}
+int main() {
+struct Node*head=NULL;
+int nodeCount=countNodes(head);
+printf("Number of nodes in the linked list: %d\n", nodeCount);
+return 0;
+}
+
+output:Number of nodes in the linked list: 0
