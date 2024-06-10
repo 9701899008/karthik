@@ -3,19 +3,20 @@
 int stack[MAX_SIZE];
 int top = -1;
 void push(int value) {
-    if (top >= MAX_SIZE - 1) {
-        printf("Stack Overflow\n");
-        return;
-    }
-    stack[++top] = value;
-    printf("%d pushed to stack\n", value);
+if (top >= MAX_SIZE - 1) {
+printf("Stack Overflow\n");
+return;
+}
+stack[++top] = value;
+printf("%d pushed to stack\n", value);
 }
 int main() {
-    push(10);
-    push(20);
-    push(30);
-    return 0;
+push(10);
+push(20);
+push(30);
+return 0;
 }
+
 output:
 10 pushed to stack
 20 pushed to stack
