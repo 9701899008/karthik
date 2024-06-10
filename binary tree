@@ -1,0 +1,34 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct Node{
+int data;
+struct Node* next;
+struct Node* prev;
+};
+void traverseForward(struct Node* head) {
+struct Node*current=head;
+while(current!=NULL){
+printf("%d ", current->data);
+current = current->next;
+}
+}
+void traverseBackward(struct Node* tail) {
+struct Node* current = tail;
+while(current!=NULL) {
+printf("%d",current->data);
+current=current->prev;
+}
+}
+int main() {
+struct Node*head=NULL;
+struct Node*tail = NULL;
+traverseForward(head);
+traverseBackward(tail);
+return 0;
+}
+
+
+output:
+Forward traversal: 1 2 3 
+Backward traversal: 3 2 1 
+
